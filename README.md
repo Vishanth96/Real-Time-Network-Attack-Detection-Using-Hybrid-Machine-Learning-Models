@@ -11,19 +11,33 @@ The dataset used in this project is stored in a CSV file named RT_IOT2022.csv. T
 Sample Dataset Columns:
 
 id.orig_p: Source port number
+
 id.resp_p: Destination port number
+
 proto: Protocol used (e.g., TCP, UDP)
+
 service: Service associated with the connection (e.g., MQTT)
+
 flow_duration: Duration of the flow in seconds
+
 fwd_pkts_tot: Total number of packets sent in the forward direction
+
 bwd_pkts_tot: Total number of packets sent in the backward direction
+
 fwd_data_pkts_tot: Total number of data packets sent in the forward direction
+
 bwd_data_pkts_tot: Total number of data packets sent in the backward direction
+
 idle.min, idle.max, idle.avg, idle.std: Idle times and their statistics
+
 fwd_init_window_size: Initial window size in the forward direction
+
 bwd_init_window_size: Initial window size in the backward direction
+
 fwd_last_window_size: Last window size in the forward direction
+
 Attack_type: Label indicating the type of attack (e.g., MQTT_Publish)
+
 
 
 # Data Loading and Preprocessing
@@ -32,6 +46,7 @@ Attack_type: Label indicating the type of attack (e.g., MQTT_Publish)
 
 The dataset is loaded from Google Drive into a Pandas DataFrame using the following steps:
 
+```
 from google.colab import drive
 import pandas as pd
 import numpy as np
@@ -47,6 +62,8 @@ dataset = pd.read_csv(file_path)
 
 print("First few rows of the dataset:")
 print(dataset.head())
+
+```
 
 **Output**: The code snippet above will display the first few rows of the dataset, allowing verification that the data has been loaded correctly.
 
