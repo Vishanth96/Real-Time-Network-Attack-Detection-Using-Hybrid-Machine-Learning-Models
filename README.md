@@ -42,7 +42,7 @@ Attack_type: Label indicating the type of attack (e.g., MQTT_Publish)
 
 # Data Loading and Preprocessing
 
-## Step 2.1 : Data Loading
+## Step 1.1 : Data Loading
 
 The dataset is loaded from Google Drive into a Pandas DataFrame using the following steps:
 
@@ -68,7 +68,7 @@ print(dataset.head())
 **Output**: The code snippet above will display the first few rows of the dataset, allowing verification that the data has been loaded correctly.
 
 
-# Sep 2.2 : Data Cleaning
+# Step 1.2 : Data Cleaning
 Data cleaning involves identifying and correcting (or removing) inaccuracies and inconsistencies in the data. This step ensures that the dataset is accurate and complete, which is crucial for model reliability. The following activities are typically performed:
 
 1. **Removing Duplicates**: Identify and remove duplicate rows from the dataset.
