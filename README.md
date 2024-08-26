@@ -10,33 +10,33 @@ The dataset used in this project is stored in a CSV file named RT_IOT2022.csv. T
 
 Sample Dataset Columns:
 
-id.orig_p: Source port number
+**id.orig_p**: Source port number
 
-id.resp_p: Destination port number
+**id.resp_p**: Destination port number
 
-proto: Protocol used (e.g., TCP, UDP)
+**proto**: Protocol used (e.g., TCP, UDP)
 
-service: Service associated with the connection (e.g., MQTT)
+**service**: Service associated with the connection (e.g., MQTT)
 
-flow_duration: Duration of the flow in seconds
+**flow_duration**: Duration of the flow in seconds
 
-fwd_pkts_tot: Total number of packets sent in the forward direction
+**fwd_pkts_tot**: Total number of packets sent in the forward direction
 
-bwd_pkts_tot: Total number of packets sent in the backward direction
+**bwd_pkts_tot:** Total number of packets sent in the backward direction
 
-fwd_data_pkts_tot: Total number of data packets sent in the forward direction
+**fwd_data_pkts_tot**: Total number of data packets sent in the forward direction
 
-bwd_data_pkts_tot: Total number of data packets sent in the backward direction
+**bwd_data_pkts_tot**: Total number of data packets sent in the backward direction
 
-idle.min, idle.max, idle.avg, idle.std: Idle times and their statistics
+**idle.min, idle.max, idle.avg, idle.std**: Idle times and their statistics
 
-fwd_init_window_size: Initial window size in the forward direction
+**fwd_init_window_size**: Initial window size in the forward direction
 
-bwd_init_window_size: Initial window size in the backward direction
+**bwd_init_window_size**: Initial window size in the backward direction
 
-fwd_last_window_size: Last window size in the forward direction
+**fwd_last_window_size**: Last window size in the forward direction
 
-Attack_type: Label indicating the type of attack (e.g., MQTT_Publish)
+**Attack_type**: Label indicating the type of attack (e.g., MQTT_Publish)
 
 
 
@@ -82,10 +82,15 @@ Data cleaning involves identifying and correcting (or removing) inaccuracies and
 Various machine learning models have been employed to classify network traffic and detect attacks. These models include:
 
 **BiGRU (Bidirectional Gated Recurrent Units)**
+
 **BiLSTM (Bidirectional Long Short-Term Memory)**
+
 **Hybrid CNN-BiGRU (Convolutional Neural Network combined with BiGRU)**
+
 **Hybrid CNN-BiLSTM (Convolutional Neural Network combined with BiLSTM)**
+
 **Random Forest (Ensemble learning method)**
+
 
 Each model has been trained and evaluated using the preprocessed dataset to determine its effectiveness in detecting different types of network attacks.
 
