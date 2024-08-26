@@ -75,6 +75,24 @@ Data cleaning involves identifying and correcting (or removing) inaccuracies and
 2. **Correcting Data Types**: Ensure that each feature is of the correct data type (e.g., integers, floats, strings) to avoid errors during analysis.
 3. **Outlier Detection and Treatment**: Identify outliers that may skew the results and decide whether to remove or transform them.
 
+# More steps will be added soon.
+
+
+# Machine Learning Models
+Various machine learning models have been employed to classify network traffic and detect attacks. These models include:
+
+**BiGRU (Bidirectional Gated Recurrent Units)**
+**BiLSTM (Bidirectional Long Short-Term Memory)**
+**Hybrid CNN-BiGRU (Convolutional Neural Network combined with BiGRU)**
+**Hybrid CNN-BiLSTM (Convolutional Neural Network combined with BiLSTM)**
+**Random Forest (Ensemble learning method)**
+
+Each model has been trained and evaluated using the preprocessed dataset to determine its effectiveness in detecting different types of network attacks.
+
+# Results
+The models are evaluated based on metrics such as accuracy, precision, recall, and F1-score. The performance of each model is compared to identify the most effective approach for real-time network attack detection.
+
+
 # How to Run the Code
 1. **Set up Google Colab**: Ensure that you have access to Google Colab and a Google Drive account.
 2. **Upload the Dataset**: Place the RT_IOT2022.csv dataset file in your Google Drive.
