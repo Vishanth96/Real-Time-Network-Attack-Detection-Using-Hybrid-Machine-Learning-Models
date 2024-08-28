@@ -75,7 +75,12 @@ Data cleaning involves identifying and correcting (or removing) inaccuracies and
 2. **Correcting Data Types**: Ensure that each feature is of the correct data type (e.g., integers, floats, strings) to avoid errors during analysis.
 3. **Outlier Detection and Treatment**: Identify outliers that may skew the results and decide whether to remove or transform them.
 
-# More steps will be added soon.
+# Step 1.3 : Feature Engineering
+
+* Following data cleaning, we move to feature selection. Feature selection is vital as it helps in choosing the most relevant features that contribute significantly to the prediction task. 
+* In this project, features related to network flow, such as flow_duration, fwd_pkts_tot, bwd_pkts_tot, and several others, are selected. 
+* The target variable, Attack_type, is also identified, and we separate it from the feature set. 
+* This separation allows us to prepare the data for model training by defining our input features (X) and the target (y).
 
 
 # Machine Learning Models
