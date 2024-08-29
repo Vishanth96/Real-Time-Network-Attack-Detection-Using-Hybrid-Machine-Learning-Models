@@ -75,8 +75,59 @@ Data cleaning involves identifying and correcting (or removing) inaccuracies and
 2. **Correcting Data Types**: Ensure that each feature is of the correct data type (e.g., integers, floats, strings) to avoid errors during analysis.
 3. **Outlier Detection and Treatment**: Identify outliers that may skew the results and decide whether to remove or transform them.
 
-# More steps will be added soon.
+# Step 1.3 : Feature Engineering
 
+* Following data cleaning, I move to feature selection. Feature selection is vital as it helps in choosing the most relevant features that contribute significantly to the prediction task. 
+* In this project, features related to network flow, such as flow_duration, fwd_pkts_tot, bwd_pkts_tot, and several others, are selected. 
+* The target variable, Attack_type, is also identified, and I separate it from the feature set. 
+* This separation allows us to prepare the data for model training by defining our input features (X) and the target (y).
+
+# Step 1.4 : Exploratory Data Analysis (EDA)
+
+* Exploratory Data Analysis (EDA) follows, where I use libraries like Matplotlib and Seaborn to visualize the distribution of key features such as flow_duration.
+* Visualizations help in understanding the data distribution and identifying any anomalies or patterns that might influence model training.
+* I also plot a correlation matrix to explore the relationships between different features, aiding in further refining our feature selection.
+
+# Step 2: Data Splitting and Model Training
+
+
+* With the data preprocessed and cleaned, I proceed to split the dataset into training and testing sets.
+* This is a critical step to ensure that our models are trained on one portion of the data and tested on another, allowing us to evaluate the model’s performance on unseen data.
+* I use an 80-20 split, where 80% of the data is used for training and 20% for testing.
+* In this step, I also encode the target labels since they are categorical.
+* Label encoding is performed using Scikit-learn’s LabelEncoder, which converts the categorical labels into numeric format suitable for model training.
+* I then build and train two different models: a Bidirectional GRU (BiGRU) model and a Bidirectional LSTM (BiLSTM) model. These models are sequentially defined using TensorFlow’s Keras API, with layers such as Bidirectional GRU/LSTM, Dense, and Dropout layers.
+* These layers help in capturing the temporal dependencies in the network traffic data, which is crucial for detecting patterns indicative of different types of attacks.
+* The models are compiled with the Adam optimizer and trained on the training set.
+* After training, the models are evaluated on the test set, and their accuracy and classification reports are printed to assess performance.
+
+# Step 3: Hyperparameter Tuning and Regularization of BiLSTM Model and BiGRU Model
+
+* To further optimize the BiGRU and BiLSTM models, hyperparameter tuning and regularization are performed.
+* This step is crucial for improving the model’s performance by finding the best combination of hyperparameters.
+* Keras Tuner’s Hyperband method is employed to search for the optimal set of hyperparameters, such as the number of units in GRU/LSTM layers, dropout rates, and learning rates.
+* I define functions to build the BiGRU and BiLSTM models, where the hyperparameters are tuned dynamically. Regularization, such as L2 regularization, is also applied to prevent overfitting.
+* The tuned models are then evaluated, and the best models are selected based on validation accuracy. These models are saved for future use.
+
+# Step 4: Hybrid Model Development
+
+* Moving beyond standard deep learning models, I develop hybrid models that combine Convolutional Neural Networks (CNNs) with BiGRU and BiLSTM.
+* The rationale behind this hybrid approach is to leverage CNN’s ability to capture spatial patterns in the data along with the temporal dependencies captured by GRU/LSTM.
+* I define two hybrid models: Hybrid CNN-BiGRU and Hybrid CNN-BiLSTM. The models start with a Conv1D layer that acts as a feature extractor, followed by MaxPooling to reduce the dimensionality.
+* The output is then flattened and reshaped to be compatible with the GRU/LSTM layers.
+* These hybrid models are trained and evaluated similarly to the previous models, with accuracy and classification reports generated to compare performance.
+
+# Step 5: Random Forest Model Training
+
+* Recognizing the importance of traditional machine learning models, I also train a Random Forest model.
+* Random Forest is an ensemble learning method known for its robustness and ability to handle large datasets with many features.
+* The dataset is reloaded and processed similarly to the previous steps, with additional feature engineering performed to create new features such as total_packets, pkt_size_ratio, and flow_duration_per_pkt.
+* These features enhance the model’s ability to differentiate between normal and malicious traffic.
+* The dataset is split into training and testing sets, and a Random Forest model is trained on the training data.
+* The model is then evaluated on the test set, with accuracy, classification reports, and confusion matrices generated to assess its performance. The trained Random Forest model is saved for later use.
+
+
+# More steps will be added soon.
 
 # Machine Learning Models
 Various machine learning models have been employed to classify network traffic and detect attacks. These models include:
